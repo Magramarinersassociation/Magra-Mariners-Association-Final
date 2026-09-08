@@ -293,14 +293,16 @@ const Gallery = ({ data }) => {
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <SafeImage 
-                src={getImageUrl(filteredImages[activeImageIndex])} 
-                alt={getImageTitle(filteredImages[activeImageIndex])} 
-                className="lightbox-img"
-                fallbackText="Image unavailable"
-                timeoutMs={6000}
-                showRetry={true}
-              />
+              <div className="lightbox-img-wrapper">
+                <SafeImage 
+                  src={getImageUrl(filteredImages[activeImageIndex])} 
+                  alt={getImageTitle(filteredImages[activeImageIndex])} 
+                  className="lightbox-img"
+                  fallbackText="Image unavailable"
+                  timeoutMs={6000}
+                  showRetry={true}
+                />
+              </div>
               <div className="lightbox-caption glassmorphism">
                 <h3>{getImageTitle(filteredImages[activeImageIndex])}</h3>
                 <p>{getImageDesc(filteredImages[activeImageIndex])}</p>
