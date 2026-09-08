@@ -4,7 +4,7 @@ import './SafeImage.css';
 
 /**
  * SafeImage Component
- * Robust multi-candidate path resolver for guaranteed image loading across dev & production hosts.
+ * Robust multi-candidate path resolver with loading skeleton and fail-proof error fallback.
  */
 const SafeImage = ({
   src,
@@ -15,16 +15,15 @@ const SafeImage = ({
   showRetry = true,
   onClick
 }) => {
-  const [hasError, setHasError] = useState(false);
+  const [status, setStatus] = useState('loading'); // 'loading' | 'loaded' | 'error'
   const [candidateIndex, setCandidateIndex] = useState(0);
   const [candidates, setCandidates] = useState([]);
   const [retryCount, setRetryCount] = useState(0);
 
-  // Compute all potential URL candidates for the image
   useEffect(() => {
-    if (!src) {
+    if (!src || typeof src !== 'string' || !src.trim()) {
       setCandidates([]);
-      setHasError(true);
+      setStatus('error');
       return;
     }
 
@@ -41,34 +40,37 @@ const SafeImage = ({
         `${cleanBase}gallery/${fileName}`,
         `./gallery/${fileName}`,
         `gallery/${fileName}`,
-        `/gallery/${fileName}`,
-        `./assets/${fileName}`
+        `/gallery/${fileName}`
       ];
       setCandidates([...new Set(list)]);
     }
 
     setCandidateIndex(0);
-    setHasError(false);
+    setStatus('loading');
   }, [src, retryCount]);
+
+  const handleLoad = () => {
+    setStatus('loaded');
+  };
 
   const handleError = () => {
     if (candidateIndex + 1 < candidates.length) {
       setCandidateIndex((prev) => prev + 1);
     } else {
-      setHasError(true);
+      setStatus('error');
     }
   };
 
   const handleRetry = (e) => {
     if (e) e.stopPropagation();
-    setHasError(false);
+    setStatus('loading');
     setCandidateIndex(0);
     setRetryCount((prev) => prev + 1);
   };
 
   const activeSrc = candidates[candidateIndex] || src;
 
-  if (hasError || !activeSrc) {
+  if (status === 'error' || !activeSrc) {
     return (
       <div className={`safe-image-container ${containerClassName} image-error-state`} onClick={onClick}>
         <div className="safe-image-fallback">
@@ -91,11 +93,17 @@ const SafeImage = ({
 
   return (
     <div className={`safe-image-container ${containerClassName}`} onClick={onClick}>
+      {status === 'loading' && (
+        <div className="safe-image-skeleton">
+          <div className="skeleton-pulse"></div>
+        </div>
+      )}
       <img
         key={`${activeSrc}-${retryCount}`}
         src={activeSrc}
         alt={alt}
-        className={`safe-image-img ${className}`}
+        className={`safe-image-img ${className} ${status === 'loaded' ? 'image-loaded' : 'image-loading'}`}
+        onLoad={handleLoad}
         onError={handleError}
         loading="eager"
       />

@@ -33,11 +33,13 @@ const Gallery = ({ data }) => {
       unsubscribe = onSnapshot(q, (snapshot) => {
         clearTimeout(timeout);
         if (!snapshot.empty) {
-          const items = snapshot.docs.map(doc => ({
-            id: `cloud-${doc.id}`,
-            ...doc.data(),
-            isCloud: true
-          }));
+          const items = snapshot.docs
+            .map(doc => ({
+              id: `cloud-${doc.id}`,
+              ...doc.data(),
+              isCloud: true
+            }))
+            .filter(item => item.imageUrl && typeof item.imageUrl === 'string' && item.imageUrl.trim() !== '');
           setCloudPhotos(items);
         } else {
           setCloudPhotos([]);
