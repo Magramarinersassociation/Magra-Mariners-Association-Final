@@ -108,18 +108,14 @@ export const siteData = {
     subtitle: "Capturing the green and maroon spirit in action",
     brochureUrl: "/Magra-Mariners-Association-Final/MMA_Brochure.pdf",
     images: Object.entries(import.meta.glob('../assets/gallery/*.jpg', { eager: true, import: 'default' }))
+      .filter(([path]) => !path.split('/').pop().startsWith('brochure_page_'))
       .map(([path, assetUrl], idx) => {
         const fileName = path.split('/').pop();
         let title = 'Association Memory';
         let category = 'match-day';
         let description = 'Captured moment from Magra Mariners Association activities.';
 
-        if (fileName.startsWith('brochure_page_')) {
-          const pageNum = fileName.replace('brochure_page_', '').replace('.jpg', '');
-          title = `Official Brochure - Page ${pageNum}`;
-          category = 'social-welfare';
-          description = `Official Association Brochure document page ${pageNum}.`;
-        } else if (fileName.startsWith('page_')) {
+        if (fileName.startsWith('page_')) {
           title = `Brochure Feature Photo (${fileName.replace('.jpg', '')})`;
           category = 'match-day';
           description = 'Extracted memory photo from the official Magra Mariners Association brochure.';
