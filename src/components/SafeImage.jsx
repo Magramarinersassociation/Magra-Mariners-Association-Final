@@ -28,7 +28,7 @@ const SafeImage = ({
     }
 
     const initial = src.trim();
-    if (initial.startsWith('http') || initial.startsWith('data:')) {
+    if (initial.startsWith('http') || initial.startsWith('data:') || initial.includes('/assets/') || initial.startsWith('assets/')) {
       setCandidates([initial]);
     } else {
       const fileName = initial.split('/').pop();
