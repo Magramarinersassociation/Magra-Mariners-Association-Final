@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaEnvelope, FaCrown } from 'react-icons/fa';
+import { FaCrown } from 'react-icons/fa';
 import './Committee.css';
 
 const Committee = ({ data }) => {
@@ -108,21 +108,6 @@ const Committee = ({ data }) => {
                 <p className="committee-bio">{member.bio}</p>
               </div>
 
-              {/* Social Media Links */}
-              <div className="committee-socials">
-                <a href={member.socials.facebook} target="_blank" rel="noopener noreferrer" className="social-icon-btn facebook" aria-label="Facebook">
-                  <FaFacebookF />
-                </a>
-                <a href={member.socials.twitter} target="_blank" rel="noopener noreferrer" className="social-icon-btn twitter" aria-label="Twitter">
-                  <FaTwitter />
-                </a>
-                <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon-btn linkedin" aria-label="LinkedIn">
-                  <FaLinkedinIn />
-                </a>
-                <a href={`mailto:${member.socials.email}`} className="social-icon-btn email" aria-label="Email">
-                  <FaEnvelope />
-                </a>
-              </div>
             </div>
           </motion.div>
         ))}
