@@ -108,9 +108,9 @@ export const siteData = {
     ],
     advisorMembers: [
       { name: "Dr. Ratul Banerjee", position: "Advisor" },
-      { name: "Mr. Anirban Dey", position: "Advisor" },
-      { name: "Mr. Saikat Ghosh", position: "Advisor" },
-      { name: "Mr. Raktim Chatterjee", position: "Advisor" },
+      { name: "Dr. Anirban Dey", position: "Advisor" },
+      { name: "Dr. Saikat Ghosh", position: "Advisor" },
+      { name: "Dr. Raktim Chatterjee", position: "Advisor" },
       { name: "Mr. Goutam Rakshit", position: "Advisor" },
       { name: "Mr. Amiyo Kumar Ghosh", position: "Advisor" }
     ],
