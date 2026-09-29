@@ -2,6 +2,8 @@ import heroBgImg from '../assets/hero_bg.jpg';
 import presidentImg from '../assets/president.jpg';
 import secretaryImg from '../assets/secretary.jpg';
 import brochureThumb from '../assets/brochure/page_1_img_1.jpg';
+import debasishDuttaImg from '../assets/debasish_dutta.jpg';
+import srinjoyBoseImg from '../assets/srinjoy_bose.jpg';
 
 
 export const siteData = {
@@ -32,10 +34,28 @@ export const siteData = {
   committee: {
     title: "Executive Committee",
     subtitle: "Leading the Mariners with Pride",
+    patrons: [
+      {
+        id: "debasish_dutta",
+        name: "Mr. Debasish Dutta",
+        position: "Patron",
+        title: "President, Mohun Bagan Athletic Club",
+        image: debasishDuttaImg,
+        bio: "President of Mohun Bagan Athletic Club. A legendary administrator and guiding force for the Mariner community."
+      },
+      {
+        id: "srinjoy_bose",
+        name: "Mr. Srinjoy Bose",
+        position: "Patron",
+        title: "General Secretary, Mohun Bagan Athletic Club",
+        image: srinjoyBoseImg,
+        bio: "General Secretary of Mohun Bagan Athletic Club. A pillar of inspiration and leadership for Mariners worldwide."
+      }
+    ],
     members: [
       {
         id: "president",
-        name: "Prasenjit Chakrabarty",
+        name: "Mr. Prasenjit Chakrabarty",
         position: "President",
         image: presidentImg,
         bio: "Veteran supporter and local coordinator. Leading the association from the front, overseeing all club relations and governance.",
@@ -48,7 +68,7 @@ export const siteData = {
       },
       {
         id: "secretary",
-        name: "Dr. Kunal Batyabal",
+        name: "Mr. Dr. Kunal Batyabal",
         position: "Secretary",
         image: secretaryImg,
         bio: "Distinguished academic and passionate football administrator. Managing operations, events, and community outreach.",
@@ -61,7 +81,7 @@ export const siteData = {
       },
       {
         id: "vice_president",
-        name: "Tarashankar Ghosh",
+        name: "Mr. Tarashankar Ghosh",
         position: "Vice President",
         image: presidentImg,
         bio: "Dedicated administrator overseeing organizational strategy and supporter coordination.",
@@ -74,7 +94,7 @@ export const siteData = {
       },
       {
         id: "assistant_secretary",
-        name: "Ayan Mukherjee",
+        name: "Mr. Ayan Mukherjee",
         position: "Assistant Secretary",
         image: secretaryImg,
         bio: "Active coordinator assisting in daily administrative operations and supporter outreach.",
@@ -87,19 +107,19 @@ export const siteData = {
       }
     ],
     executiveMembers: [
-      { name: "Arijit Ghosh", position: "Cashier" },
-      { name: "Indrajit Sinha", position: "Convenor" },
-      { name: "Arnab Mukherjee", position: "Social Media Head & Assistant Cashier" },
-      { name: "Kartick Bhattacharjee", position: "Executive Member" },
-      { name: "Biplob Ghosh", position: "Executive Member" },
-      { name: "Aditya Pandey", position: "Assistant Cashier" },
-      { name: "Arup Kundu", position: "Executive Member" },
-      { name: "Bablu Pal", position: "Executive Member" },
-      { name: "Soumya Batyabal", position: "Executive Member" },
-      { name: "Raja Nath", position: "Executive Member" },
-      { name: "Sayak Mitra", position: "Executive Member" },
-      { name: "Shubham Neogi", position: "Executive Member" },
-      { name: "Subhajit Das", position: "Executive Member" }
+      { name: "Mr. Arijit Ghosh", position: "Cashier" },
+      { name: "Mr. Indrajit Sinha", position: "Convenor" },
+      { name: "Mr. Arnab Mukherjee", position: "Social Media Head & Assistant Cashier" },
+      { name: "Mr. Kartick Bhattacharjee", position: "Executive Member" },
+      { name: "Mr. Biplob Ghosh", position: "Executive Member" },
+      { name: "Mr. Aditya Pandey", position: "Assistant Cashier" },
+      { name: "Mr. Arup Kundu", position: "Executive Member" },
+      { name: "Mr. Bablu Pal", position: "Executive Member" },
+      { name: "Mr. Soumya Batyabal", position: "Executive Member" },
+      { name: "Mr. Raja Nath", position: "Executive Member" },
+      { name: "Mr. Sayak Mitra", position: "Executive Member" },
+      { name: "Mr. Shubham Neogi", position: "Executive Member" },
+      { name: "Mr. Subhajit Das", position: "Executive Member" }
     ]
   },
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaEnvelope } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaEnvelope, FaCrown } from 'react-icons/fa';
 import './Committee.css';
 
 const Committee = ({ data }) => {
@@ -9,6 +9,52 @@ const Committee = ({ data }) => {
       <div className="section-header">
         <h2>{data.title}</h2>
         <p>{data.subtitle}</p>
+      </div>
+
+      {/* PATRONS SECTION — PLACED AT THE VERY TOP */}
+      {data.patrons && data.patrons.length > 0 && (
+        <div className="patrons-section">
+          <div className="patrons-header">
+            <span className="patrons-badge">
+              <FaCrown className="patron-badge-icon" /> HONOURABLE PATRONS
+            </span>
+            <h3 className="patrons-title">Patrons</h3>
+            <div className="patrons-divider"></div>
+          </div>
+
+          <div className="patrons-grid">
+            {data.patrons.map((patron, idx) => (
+              <motion.div
+                key={patron.id || idx}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: idx * 0.2, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -6 }}
+                className="patron-card-wrapper"
+              >
+                <div className="patron-card glassmorphism">
+                  <div className="patron-img-container">
+                    <img src={patron.image} alt={patron.name} className="patron-img" />
+                    <div className="patron-img-border"></div>
+                  </div>
+                  <div className="patron-info">
+                    <span className="patron-role-tag">{patron.position}</span>
+                    <h3 className="patron-name">{patron.name}</h3>
+                    <p className="patron-official-title">{patron.title}</p>
+                    {patron.bio && <p className="patron-bio">{patron.bio}</p>}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* EXECUTIVE COMMITTEE SECTION */}
+      <div className="exec-committee-header-divider">
+        <h3 className="exec-committee-heading">Executive Committee</h3>
+        <div className="exec-committee-underline"></div>
       </div>
 
       <div className="committee-cards-container">
