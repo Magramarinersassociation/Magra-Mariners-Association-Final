@@ -41,7 +41,7 @@ export const siteData = {
         position: "Patron",
         title: "President, Mohun Bagan Athletic Club",
         image: debasishDuttaImg,
-        bio: "President of Mohun Bagan Athletic Club. A legendary administrator and guiding force for the Mariner community."
+        bio: "“A respected leader and dedicated administrator, contributing to the legacy and growth of Mohun Bagan Athletic Club and inspiring generations of Mariners.”"
       },
       {
         id: "srinjoy_bose",
@@ -49,7 +49,7 @@ export const siteData = {
         position: "Patron",
         title: "General Secretary, Mohun Bagan Athletic Club",
         image: srinjoyBoseImg,
-        bio: "General Secretary of Mohun Bagan Athletic Club. A pillar of inspiration and leadership for Mariners worldwide."
+        bio: "“A distinguished administrator whose leadership and commitment continue to strengthen Mohun Bagan Athletic Club and its proud community of Mariners.”"
       }
     ],
     members: [
