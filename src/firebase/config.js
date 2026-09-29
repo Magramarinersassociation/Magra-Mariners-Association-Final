@@ -31,10 +31,10 @@ export const ROLES = {
 
 // Map of Authorized Officials with their roles and names
 export const AUTHORIZED_OFFICIALS = {
-  'sm429113@gmail.com': {
-    name: 'Soumyadeep Modak',
+  'indrajitsinhaother@gmail.com': {
+    name: 'Indrajit Sinha',
     role: ROLES.SUPER_ADMIN,
-    title: 'Founder & Super Admin'
+    title: 'Convenor & Super Admin'
   },
   'ghostygamer47@gmail.com': {
     name: 'Subhankar Banerjee',
