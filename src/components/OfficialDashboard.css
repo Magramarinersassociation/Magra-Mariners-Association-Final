@@ -423,6 +423,55 @@
   font-size: 0.9rem;
 }
 
+.actions-td {
+  white-space: nowrap;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.action-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-family: var(--font-secondary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.action-icon-btn.edit-btn {
+  background: rgba(30, 215, 96, 0.15);
+  color: var(--color-green-light);
+  border-color: rgba(30, 215, 96, 0.35);
+}
+
+.action-icon-btn.edit-btn:hover {
+  background: var(--color-green);
+  color: white;
+  border-color: var(--color-green);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(30, 215, 96, 0.35);
+}
+
+.action-icon-btn.delete-btn {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border-color: rgba(239, 68, 68, 0.35);
+}
+
+.action-icon-btn.delete-btn:hover {
+  background: #dc2626;
+  color: white;
+  border-color: #dc2626;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);
+}
+
 .clickable-row {
   cursor: pointer;
   transition: background var(--transition-fast);
