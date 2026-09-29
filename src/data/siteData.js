@@ -106,7 +106,7 @@ export const siteData = {
   gallery: {
     title: "Official Photo Gallery",
     subtitle: "Capturing the green and maroon spirit in action",
-    brochureUrl: "/Magra-Mariners-Association-Final/MMA_Brochure.pdf",
+    brochureUrl: "/MMA_Brochure.pdf",
     images: Object.entries(import.meta.glob('../assets/gallery/*.jpg', { eager: true, import: 'default' }))
       .filter(([path]) => !path.split('/').pop().startsWith('brochure_page_'))
       .map(([path, assetUrl], idx) => {
