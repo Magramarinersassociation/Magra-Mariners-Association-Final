@@ -51,6 +51,35 @@ const Committee = ({ data }) => {
         </div>
       )}
 
+      {/* ADVISOR COMMITTEE SECTION — PLACED DIRECTLY BELOW PATRONS & ABOVE EXECUTIVE MEMBERS */}
+      {data.advisorMembers && data.advisorMembers.length > 0 && (
+        <div className="advisor-committee-section">
+          <div className="advisor-committee-header">
+            <h3 className="advisor-committee-title">Advisor Committee</h3>
+            <div className="advisor-committee-divider"></div>
+          </div>
+          <div className="advisor-members-grid">
+            {data.advisorMembers.map((member, index) => (
+              <motion.div 
+                key={index}
+                className="executive-member-tag advisor-member-tag glassmorphism"
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: (index % 3) * 0.05 }}
+                whileHover={{ scale: 1.05, borderColor: 'rgba(223, 186, 115, 0.5)' }}
+              >
+                <span className="member-bullet advisor-bullet">🎖️</span>
+                <div className="member-details">
+                  <span className="member-name">{member.name}</span>
+                  <span className="member-position">{member.position}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* EXECUTIVE COMMITTEE SECTION */}
       <div className="exec-committee-header-divider">
         <h3 className="exec-committee-heading">Executive Committee</h3>
