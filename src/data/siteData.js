@@ -55,7 +55,7 @@ export const siteData = {
     members: [
       {
         id: "president",
-        name: "Mr. Prasenjit Chakrabarty",
+        name: "Mr. Prasenjit Chakraborty",
         position: "President",
         image: presidentImg,
         bio: "Veteran supporter and local coordinator. Leading the association from the front, overseeing all club relations and governance.",
