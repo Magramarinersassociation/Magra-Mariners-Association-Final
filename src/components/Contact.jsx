@@ -87,7 +87,7 @@ const Contact = ({ data }) => {
             <div className="contact-item">
               <div className="contact-icon green-bg"><FaPhoneAlt /></div>
               <div className="contact-text">
-                <h4>Dr. Kunal Batyabal</h4>
+                <h4>Dr. Kunal Batabyal</h4>
                 <p className="contact-designation">General Secretary, Magra Mariners Association</p>
                 <p className="contact-phone-val">
                   <a href="tel:9433477024" className="contact-clickable-phone">9433477024</a>

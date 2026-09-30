@@ -68,7 +68,7 @@ export const siteData = {
       },
       {
         id: "secretary",
-        name: "Dr. Kunal Batyabal",
+        name: "Dr. Kunal Batabyal",
         position: "Secretary",
         image: secretaryImg,
         bio: "Distinguished academic and passionate football administrator. Managing operations, events, and community outreach.",
