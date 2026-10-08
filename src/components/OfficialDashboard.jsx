@@ -560,7 +560,14 @@ const OfficialDashboard = () => {
       setGalleryCaption('');
     } catch (err) {
       console.error(err);
-      showAlert('error', `Failed to upload photos: ${err.message}`);
+      const isPermissionErr = err.message && (
+        err.message.toLowerCase().includes('permission') || 
+        err.message.toLowerCase().includes('insufficient')
+      );
+      const errorText = isPermissionErr 
+        ? 'Firebase Permissions Error: Missing write permissions on Cloud Firestore or Storage. Please update Security Rules in Firebase Console.' 
+        : err.message;
+      showAlert('error', `Failed to upload photos: ${errorText}`);
     } finally {
       setGalleryUploading(false);
     }
